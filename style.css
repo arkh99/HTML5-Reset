@@ -27,6 +27,7 @@ div {
 /* Header */
 header {
     margin-bottom: 20px;
+    border-bottom: 2px solid #007BFF;
 }
 
 header h1 a {
@@ -34,20 +35,55 @@ header h1 a {
     color: #333;
 }
 
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
 header nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
 header nav ul li {
-    display: inline;
-    margin-right: 20px;
+    position: relative;
 }
 
 header nav ul li a {
     text-decoration: none;
     color: #007BFF;
     font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+header nav ul li a.active {
+    color: #fff;
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 /* Main Content */
